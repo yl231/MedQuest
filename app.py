@@ -9,7 +9,6 @@ str5 = 'fVPXSt2R0'
 str6 = 'w30BFSP'
 app = Flask(__name__)
 openai.api_key = str1 + str2 + str3 + str4 + str5 + str6
-
 @app.route('/')
 def index():
     return render_template('main_webpage.html')
