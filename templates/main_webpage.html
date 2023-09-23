@@ -32,5 +32,25 @@
         </div>
     </main>
 
+    <h1>Ask Your Health Concern</h1>
+    <input type="text" id="question" placeholder="Type your question here...">
+    <button onclick="getAnswer()">Ask</button>
+    <p id="answer">Answer:</p>
+
+    <script>
+        async function getAnswer() {
+            const question = document.getElementById('question').value;
+            const response = await fetch('/get_answer', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ question: question })
+            });
+            const data = await response.json();
+            document.getElementById('answer').innerText = data.answer;
+        }
+    </script>
+
 </body>
 </html>
