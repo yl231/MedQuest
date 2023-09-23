@@ -2,163 +2,75 @@
 <html>
 
 <head>
-
-    <meta content="initial-scale=1,
-		maximum-scale=1, user-scalable=0" name="viewport" />
-
+    <meta content="initial-scale=1, maximum-scale=1, user-scalable=0" name="viewport" />
     <meta name="viewport" content="width=device-width" />
 
-    <!--Datatable plugin CSS file -->
+    <!-- DataTables CSS file -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" />
 
-    <!--jQuery library file -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js">
-    </script>
+    <!-- jQuery library file -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 
-    <!--Datatable plugin JS library file -->
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
-    </script>
+    <!-- DataTables JavaScript library file -->
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+
+    <style>
+        /* Add custom CSS styles here */
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        table.display {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table.display th,
+        table.display td {
+            padding: 8px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        table.display th {
+            background-color: #f2f2f2;
+        }
+
+        .dataTables_wrapper {
+            padding: 20px;
+        }
+    </style>
 </head>
 
 <body>
-    <h2>
-        Research Results
-    </h2>
+    <h2>Research Results</h2>
 
-    <!--HTML tables with student data-->
-    <table id="" class="display" style="width:100%">
+    <!-- HTML table with student data -->
+    <table id="studentTable" class="display">
         <thead>
             <tr>
-                <th>StudentID</th>
-                <th>StudentName</th>
+                <th>Student ID</th>
+                <th>Student Name</th>
                 <th>Age</th>
                 <th>Gender</th>
                 <th>Marks Scored</th>
             </tr>
         </thead>
-
         <tbody>
-            <tr>
-                <td>ST1</td>
-                <td>Prema</td>
-                <td>35</td>
-                <td>Female</td>
-                <td>320</td>
-            </tr>
-            <tr>
-                <td>ST2</td>
-                <td>Wincy</td>
-                <td>36</td>
-                <td>Female</td>
-                <td>170</td>
-            </tr>
-            <tr>
-                <td>ST3</td>
-                <td>Ashmita</td>
-                <td>41</td>
-                <td>Female</td>
-                <td>860</td>
-            </tr>
-            <tr>
-                <td>ST4</td>
-                <td>Kelina</td>
-                <td>32</td>
-                <td>Female</td>
-                <td>433</td>
-            </tr>
-            <tr>
-                <td>ST5</td>
-                <td>Satvik</td>
-                <td>41</td>
-                <td>male</td>
-                <td>162</td>
-            </tr>
-            <tr>
-                <td>ST6</td>
-                <td>William</td>
-                <td>37</td>
-                <td>Female</td>
-                <td>372</td>
-            </tr>
-            <tr>
-                <td>ST7</td>
-                <td>Chandan</td>
-                <td>31</td>
-                <td>male</td>
-                <td>375</td>
-            </tr>
-            <tr>
-                <td>ST8</td>
-                <td>David</td>
-                <td>45</td>
-                <td>male</td>
-                <td>327</td>
-            </tr>
-            <tr>
-                <td>ST9</td>
-                <td>Harry</td>
-                <td>29</td>
-                <td>male</td>
-                <td>205</td>
-            </tr>
-            <tr>
-                <td>ST10</td>
-                <td>Frost</td>
-                <td>29</td>
-                <td>male</td>
-                <td>300</td>
-            </tr>
-            <tr>
-                <td>ST11</td>
-                <td>Ginny</td>
-                <td>31</td>
-                <td>male</td>
-                <td>560</td>
-            </tr>
-            <tr>
-                <td>ST12</td>
-                <td>Flod</td>
-                <td>45</td>
-                <td>Female</td>
-                <td>342</td>
-            </tr>
-            <tr>
-                <td>ST13</td>
-                <td>Marshy</td>
-                <td>23</td>
-                <td>Female</td>
-                <td>470</td>
-            </tr>
-            <tr>
-                <td>ST13</td>
-                <td>Kennedy</td>
-                <td>43</td>
-                <td>male</td>
-                <td>313</td>
-            </tr>
-            <tr>
-                <td>ST14</td>
-                <td>Fiza</td>
-                <td>31</td>
-                <td>Female</td>
-                <td>750</td>
-            </tr>
-            <tr>
-                <td>ST15</td>
-                <td>Silva</td>
-                <td>34</td>
-                <td>male</td>
-                <td>985</td>
-            </tr>
+            <!-- Data rows here -->
         </tbody>
     </table>
-    <br />
-
 
     <script>
-        /* Initialization of datatables */
+        /* Initialization of DataTables */
         $(document).ready(function () {
-            $('table.display').DataTable();
+            $('#studentTable').DataTable({
+                "paging": true, // Enable pagination
+                "searching": true, // Enable search bar
+                "ordering": true, // Enable column sorting
+                "responsive": true, // Make the table responsive
+            });
         });
     </script>
 </body>
