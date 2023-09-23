@@ -1,0 +1,34 @@
+/* Apply your styles here */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-input {
+    margin-bottom: 20px;
+}
+
+.user-input label,
+.user-input select,
+.user-input input,
+.user-input button {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="JS/main_js.JS"></script> <!-- Include your JavaScript file here -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Data Display</title>
+    <link rel="stylesheet" href="CSS/main_css.css"> <!-- Include your CSS file here -->
+
+</head>
+<body>
+    <header>
+        <h1>JSON Data Display</h1>
+    </header>
+    
+    <main>
+        <div class="user-input">
+            <label for="inputText">Enter Text:</label>
+            <input type="text" id="inputText">
+            <label for="selectOption">Select an Option:</label>
+            <select id="selectOption">
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <!-- Add more options as needed -->
+            </select>
+            <button id="generateURL" onclick="generateJSONURL()">Generate JSON URL</button>
+        </div>
+        <div class="json-display">
+            <h2>JSON Data</h2>
+            <div id="jsonData"></div>
+        </div>
+    </main>
+
+</body>
+</html>
