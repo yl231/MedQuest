@@ -18,7 +18,8 @@ def index():
 @app.route('/get_answer', methods=['POST'])
 def get_answer():
     question = request.json.get('question')
-    response = openai.Completion.create(engine="text-davinci-003", prompt=question, max_tokens=150)
+    prompt = "please address my issues in a more straightforward diction" + question
+    response = openai.Completion.create(engine="gpt-3.5-turbo-instruct", prompt=prompt, max_tokens=500)
     answer = response.choices[0].text.strip()
     return jsonify(answer=answer)
 
