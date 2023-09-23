@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta content="initial-scale=1, maximum-scale=1, user-scalable=0" name="viewport" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" />
+    <!-- Add Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <!-- Add Bootstrap JS and Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Research Results</h2>
+
+        <!-- Add Bootstrap classes for styling -->
+        <table id="studyTable" class="table table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Study ID</th>
+                    <th>Study Title</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data rows will be added dynamically -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            // Fetch data from the remote JSON URL
+            $.getJSON('https://classic.clinicaltrials.gov/api/query/full_studies?expr=Coronavirus+COVID&max_rnk=100&fmt=json', function (data) {
+                const studies = data.FullStudiesResponse.FullStudies;
+
+                // Iterate through the studies data and add rows to the DataTable
+                $.each(studies, function (index, study) {
+                    const protocol = study.Study.ProtocolSection;
+                    const status = protocol.StatusModule;
+
+                    // Determine the text color based on the status
+                    let textColorClass = '';
+                    if (status.OverallStatus === 'Completed' || status.OverallStatus === 'Recruiting' || status.OverallStatus === 'Active, not recruiting') {
+                        textColorClass = 'text-success'; // Green text for potential to work
+                    } else if (status.OverallStatus === 'Unknown status') {
+                        textColorClass = 'text-warning'; // Yellow text for unknown status
+                    } else {
+                        textColorClass = 'text-danger'; // Red text for other statuses
+                    }
+
+                    // Append row with the determined text color
+                    $('#studyTable tbody').append(
+                        '<tr>' +
+                        '<td>' + protocol.IdentificationModule.NCTId + '</td>' +
+                        '<td>' + protocol.IdentificationModule.BriefTitle + '</td>' +
+                        '<td>' + status.StartDateStruct.StartDate + '</td>' +
+                        '<td>' + status.CompletionDateStruct.CompletionDate + '</td>' +
+                        '<td class="' + textColorClass + '">' + status.OverallStatus + '</td>' +
+                        '</tr>'
+                    );
+                });
+
+                // Initialize DataTable
+                $('#studyTable').DataTable({
+                    "paging": true,
+                    "searching": true,
+                    "ordering": true,
+                    "responsive": true
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
