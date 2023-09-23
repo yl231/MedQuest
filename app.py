@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify, render_template
 import openai
 
 app = Flask(__name__)
-openai.api_key = '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'
+openai.api_key = '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'
 
 @app.route('/')
 def index():
