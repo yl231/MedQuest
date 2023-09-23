@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<!-- <html xmlns="https://www.w3.org/1999/xhtml" lang='en'> -->
+<head>  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="referrer" content="origin-when-cross-origin"/>
+  <title>Clinical Trials Search</title>
+  <script src="https://use.fontawesome.com/20a31629ec.js"></script>
+  <!-- import main-search-page.css -->
+  <link rel="stylesheet" href="css/main-search-page.css">
+  <!-- import base.css -->
+  <link rel="stylesheet" href="css/base.css">
+
+<!--[if lte IE 7]>
+       <link href="/ct2/html/css/target-IE7-and-below.css" rel="stylesheet" type="text/css">
+<![endif]-->
+
+<style type="text/css">
+  h2 
+  {
+      background-color: #EAEAEA;
+  }
+</style>
+</head>
+
+
+<body> 
+<script type="text/javascript">
+    jQuery.getScript("https://www.ncbi.nlm.nih.gov/core/alerts/alerts.js", function () {
+      galert(['#alert_banner', 'body &gt; *:nth-child(1)'])});
+</script>
+
+<div id="alert_banner"></div>
+
+<!--BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET-->
+<script type='text/javascript'>
+/*
+(function(){var g=function(e,h,f,g){
+this.get=function(a){for(var a=a+"=",c=document.cookie.split(";"),b=0,e=c.length;b<e;b++){for(var d=c[b];" "==d.charAt(0);)d=d.substring(1,d.length);if(0==d.indexOf(a))return d.substring(a.length,d.length)}return null};
+this.set=function(a,c){var b="",b=new Date;b.setTime(b.getTime()+6048E5);b="; expires="+b.toGMTString();document.cookie=a+"="+c+b+"; path=/; "};
+this.check=function(){var a=this.get(f);if(a)a=a.split(":");else if(100!=e)"v"==h&&(e=Math.random()>=e/100?0:100),a=[h,e,0],this.set(f,a.join(":"));else return!0;var c=a[1];if(100==c)return!0;switch(a[0]){case "v":return!1;case "r":return c=a[2]%Math.floor(100/c),a[2]++,this.set(f,a.join(":")),!c}return!0};
+this.go=function(){if(this.check()){var a=document.createElement("script");a.type="text/javascript";a.src=g+ "&t=" + (new Date()).getTime();document.body&&document.body.appendChild(a)}};
+this.start=function(){var a=this;window.addEventListener?window.addEventListener("load",function(){a.go()},!1):window.attachEvent&&window.attachEvent("onload",function(){a.go()})}};
+try{(new g(100,"r","QSI_S_ZN_7WHWRcRMBs9xWYd","https://zn7whwrcrmbs9xwyd-nlmenterprise.siteintercept.qualtrics.com/WRSiteInterceptEngine/?Q_ZID=ZN_7WHWRcRMBs9xWYd")).start()}catch(i){}})();
+*/
+/*
+$(window).on('error', function(e){
+	// this will prevent error propagation from qualtrics
+	// window.addEventListener('error', (e) => { e.preventDefault(); });
+	// window.onerror = function(message, source, lineno, colno, error){ event.preventDefault(); });
+	console.log('eondow.error', event.message)
+	e.preventDefault();		// stop reporting (and maybe execution) of failed script
+})
+*/
+(function () {
+    var g = function (e, h, f, g) {
+        this.get = function (a) {
+            for (var a = a + "=", c = document.cookie.split(";"), b = 0, e = c.length; b < e; b++) {
+                for (var d = c[b]; " " == d.charAt(0); ) d = d.substring(1, d.length);
+                if (0 == d.indexOf(a)) return d.substring(a.length, d.length);
+            }
+            return null;
+        };
+        this.set = function (a, c) {
+            var b = "",
+                b = new Date();
+            b.setTime(b.getTime() + 6048e5);
+            b = "; expires=" + b.toGMTString();
+            document.cookie = a + "=" + c + b + "; path=/; ";
+        };
+        this.check = function () {
+            var a = this.get(f);
+            if (a) a = a.split(":");
+            else if (100 != e) "v" == h && (e = Math.random() >= e / 100 ? 0 : 100), (a = [h, e, 0]), this.set(f, a.join(":"));
+            else return !0;
+            var c = a[1];
+            if (100 == c) return !0;
+            switch (a[0]) {
+                case "v":
+                    return !1;
+                case "r":
+                    return (c = a[2] % Math.floor(100 / c)), a[2]++, this.set(f, a.join(":")), !c;
+            }
+            return !0;
+        };
+        this.go = function () {
+			try {
+				if (this.check()) {
+					var a = document.createElement("script");
+					a.type = "text/javascript";
+					a.src = g + "&t=" + new Date().getTime();
+					document.body && document.body.appendChild(a);
+				}
+			}
+			catch(ex) {}
+        };
+        this.start = function () {
+            var a = this;
+            window.addEventListener
+                ? window.addEventListener(
+                      "load",
+                      function () {
+                          a.go();
+                      },
+                      !1
+                  )
+                : window.attachEvent &&
+                  window.attachEvent("onload", function () {
+                      a.go();
+                  });
+        };
+    };
+    try {
+        new g(100, "r", "QSI_S_ZN_7WHWRcRMBs9xWYd", "https://zn7whwrcrmbs9xwyd-nlmenterprise.siteintercept.qualtrics.com/WRSiteInterceptEngine/?Q_ZID=ZN_7WHWRcRMBs9xWYd").start();
+    } catch (i) {}
+})();
+</script>
+<div id='ZN_7WHWRcRMBs9xWYd'><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
+<!--END WEBSITE FEEDBACK SNIPPET-->
+
+<script type="text/javascript" src="/ct2/html/js/working.js"></script><noscript></noscript>
+<div id="workingDim" class="ct-dim">
+</div>
+
+<div id="main-content" class="w3-row" style="margin-top:0">
+	<div id="body-copy" class="w3-col" style="margin-top:0">
+	
+		<h1>Advanced Search</h1>
+
+			<script type="text/javascript">
+$(document).ready(function() {
+			var userAgent = navigator.userAgent.toLowerCase();
+	if ((userAgent.indexOf("msie") > -1) || (userAgent.indexOf("rv:11") > -1)) 
+	{
+		$( ".ct-clearFieldIE" ).css('padding', '0 4px');
+	} else {
+    	$( ".ct-clearField" ).css('display', 'inline');
+	};
+
+		$( "#Country" ).on('change', function() {
+		var theCountry = $(this).val();
+		$( "#State" ).val(""); 
+		$( "#City" ).val("");
+		$( "#Distance" ).val(""); 
+		if (theCountry == "") {
+			$( "#StateRow" ).hide();
+		} else {
+			if (theCountry == "US") {
+				$( "#StateField" ).show();
+			} else {
+				$( "#StateField" ).hide();
+			};
+			$( "#StateRow" ).show();
+		}
+	});
+
+	$( "#State" ).on('change', function() {
+		var theState = $(this).val();
+		if(theState != "") $("#StateWarning").text("").hide();
+	});
+	
+	$( "#City" ).on('change', function() {
+		var theCity = $(this).val();
+		if(theCity == "") $("#StateWarning").text("").hide();
+	});
+	
+				$( "#MainForm" ).on('submit', function( event ) {
+		var theCountry = $( "#Country" ).val();
+				if (theCountry == "") return true;
+		var theState = $( "#State" ).val();
+		var theCity = $( "#City" ).val();
+		if (theCountry == "US" &&
+			theState == "" && theCity != "")
+		{
+			$("#StateWarning").text("Please select a State when specifying a US City").show();
+			$("#State").trigger('focus');
+			event.preventDefault();
+			return false;
+		}
+				if($('input:invalid').length==0)
+		{
+			showWorking();
+		} 
+		return true;
+	});
+			var theCountry = $( "#Country" ).val();
+	if (theCountry != "") {
+		if (theCountry=="US") {
+			$("#StateField").show();
+		} else {
+			$("#StateField").hide();
+		}
+		$("#StateRow").show();
+	}
+});
+
+		var changeStudyType = function() {
+	  var studyType = $('#StudyType').val();
+	  if (studyType === 'Expn') {
+	  	$('#expAccTypes').show();
+	  } else {
+	    $('#expAccTypes').hide();
+	    clearExpAccTypes();
+	  }
+	}
+	
+	var clearExpAccTypes = function() {
+	  $('#eaIndividual').prop('checked', false);
+	  $('#eaIntermediate').prop('checked', false);
+	  $('#eaTreatment').prop('checked', false);
+	}
+</script><noscript></noscript>
+
+<!-- advanced search form -->
+  <form id="MainForm" method="get" action="/ct2/results" 
+  	onsubmit="sendSearchPing();" style="margin:0;">
+    
+	<fieldset class="w3-container adv-fieldset ct-StdBackground">
+	
+    <div class="w3-row">
+        <div class="w3-col m3 w3-container"></div>
+        <div class="w3-col m6" style="padding:2ex 0;">
+          <input class="ct-searchButton" style="margin-right:1em" type="submit" aria-label="Submit Search" title="Submit Search" value="Search"/>
+          <a title="Show How to Use Advanced Search page - opens new window"  href="/ct2/help/help" onclick="openNewWindow('/ct2/help/help'); return false"
+>Help</a><br/>
+        </div>
+    </div>
+      
+    <div class="w3-row w3-padding-4">
+        <div class="w3-col m3 w3-right-align ct-small-left ct-inputFieldLabel">
+          <label for="Conditions"><span style="display:inline;" class="term" data-term="Condition/disease" title="Show definition">Condition or disease</span>: &nbsp;</label>
+        </div>
+        <div class="w3-col m6 w3-left-align ct-flexible">
+          <input class="ct-textInputField" type="text" name="cond" id="Conditions" autofocus value="" maxlength="250" tabIndex="1"/>
+		  <button class="ct-clearField" type="button" aria-label="Clear the Conditions/Disease field" title="Clear the Conditions/Disease field" onclick="$('#Conditions').val('');">x</button>
+		  <div style="display:none" id="Conditions-ExtensionsId"><ul><li>&nbsp;</li></ul></div>
+		  <script type="text/javascript"> new ExtensionsMgr("Conditions","Conditions-ExtensionsId",null,"/ct2/rpc/extend/cond"); </script><noscript></noscript>
+        </div>
+    </div>
+
+    <!-- General search terms (Other Terms) ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+    <div class="w3-row w3-padding-4">
+        <div class="w3-col m3 s2 w3-right-align ct-small-left ct-inputFieldLabel" style="white-space: nowrap;">
+        	<label for="searchTerms"><span style="display:inline;" class="term" data-term="Other terms" title="Show definition">Other terms</span>: &nbsp;</label>
+        </div>
+        <div class="w3-col m6 w3-left-align ct-flexible">         
+		    	        <input type="text" name="term" class="ct-textInputField"  id="searchTerms" tabIndex="2" value= "" maxlength="250">
+			<button class="ct-clearField" type="button"  aria-label="Clear the Other Terms field" title="Clear the Other Terms field" onclick="$('#searchTerms').val('');">x</button>
+        </div>
+    </div>
+    
+    
+    <div class="w3-row w3-padding-4">
+        <div class="w3-col m3 w3-right-align ct-small-left ct-inputFieldLabel" style="white-space: nowrap;">
+        	<label for="StudyType"><span style="display:inline;" class="term" data-term="Study Type" title="Show definition">Study type</span>: &nbsp;</label>
+        </div>
+        <div class="w3-col m6 w3-left-align ct-flexible">
+		            <select class="ct-selectInputField" name="type" id="StudyType" onchange="changeStudyType()" tabIndex="3">
+            <option value="">All Studies &nbsp;</option>
+            <option value="Intr"  >Interventional Studies (Clinical Trials)&nbsp;</option>
+            <option value="Obsr"  >Observational Studies &nbsp;</option>
+            <option value="PReg"  > &nbsp; -- Patient Registries &nbsp;</option>
+            <option value="Expn"  >Expanded Access Studies &nbsp;</option>
+          </select>
+		  <button class="ct-clearFieldIE" type="button" aria-label="Set the Study Type field to the default (All Studies)" title="Set the Study Type field to the default (All Studies)" onclick="$('#StudyType').val('');">x</button>
+        </div>
+    </div>
+
+    <div class="w3-row w3-padding-4" id="expAccTypes"  style="display:none" >
+        <div class="w3-col m3 w3-right-align ct-small-left ct-inputFieldLabel" style="white-space: nowrap;">
+        	&nbsp;
+        </div>
+        <div class="w3-col m6 w3-left-align">
+    	  			<div class="ct-facetLegendCB" style="font-size:inherit;"><span style="display:inline;" class="term" data-term="Expanded Access Type" title="Show definition">Expanded Access Type</span>:</div>
+			<ul class="ct-facetCB">					
+              <li class="ct-facet">        		<label class="ct-facetCB ct-filter" for="eaIndividual"><input type="checkbox" class="ct-filter" name="ea_idv" id="eaIndividual" value="Y"
+              	 tabIndex="4"/> Individual Patients</label>
+			  </li>
+              <li class="ct-facet">        		<label class="ct-facetCB ct-filter" for="eaIntermediate"><input type="checkbox" class="ct-filter" name="ea_int" id="eaIntermediate" value="Y"
+              	 tabIndex="5"/> Intermediate-size Population</label>
+			  </li>
+              <li class="ct-facet">        		<label class="ct-facetCB ct-filter" for="eaTreatment"><input type="checkbox" class="ct-filter" name="ea_tmt" id="eaTreatment" value="Y"
+              	 tabIndex="6"/> Treatment IND/Protocol</label>
+			  </li>
+		  </ul>
+		</div>
+    </div>
+    
+    <div class="w3-row w3-padding-4">
+        <div class="w3-col m3 w3-right-align ct-small-left ct-inputFieldLabel" style="white-space: nowrap;">
+          <label for="StudyResults"><span style="display:inline;" class="term" data-term="Study Results" title="Show definition">Study Results</span>: &nbsp;</label>
+        </div>
+        <div class="w3-col m6 w3-left-align ct-flexible">
+		            <select class="ct-selectInputField" name="rslt" id="StudyResults" tabIndex="7">
+            <option value="">All Studies &nbsp;</option>
+            <option value="With"  >Studies With Results &nbsp;</option>
+            <option value="Without"  >Studies Without Results &nbsp;</option>
+          </select>
+		  <button class="ct-clearFieldIE" type="button" aria-label="Set the Study Results field to the default (All Studies)" title="Set the Study Results field to the default (All Studies)" onclick="$('#StudyResults').val('');">x</button>
+        </div>
+    </div>
+
+    <!-- Recruitment ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <div class="w3-row w3-padding-4">
+        <div class="w3-col m3 w3-right-align ct-small-left ct-inputFieldLabel" style="white-space:nowrap;">
+			<span style="display:inline;" class="term" data-term="Status" title="Show definition">Status</span>: &nbsp;
+        </div>
+        <div class="w3-col m8 l6 w3-left-align w3-padding-4">
+			<div class="w3-row" id="Recruitment">
+				<div class="ct-facetLegendCB w3-col w3-half" style="padding-top:1px;">
+					<div class="ct-facetLegendCB" style="font-size:inherit;"><span style="display:inline;" class="term" data-term="Recruitment Status" title="Show definition">Recruitment</span>:</div>
+					<ul class="ct-facetCB">					
+			            <li class="ct-facet">	<label for="notYetRecrCB" class="StudiesCB ct-facetCB ct-filter" title="The study has not started recruiting participants."><input type="checkbox" class="StudiesCB ct-facetCB ct-filter" id="notYetRecrCB" name="recrs" value="b" tabIndex="8"
+				/> Not yet recruiting</label>
+</li>
+			            <li class="ct-facet">	<label for="recruitingCB" class="StudiesCB ct-facetCB ct-filter" title="The study is currently recruiting participants."><input type="checkbox" class="StudiesCB ct-facetCB ct-filter" id="recruitingCB" name="recrs" value="a" tabIndex="9"
+				/> Recruiting</label>
+</li>
+			            <li class="ct-facet">	<label for="enrollingByInvCB" class="StudiesCB ct-facetCB ct-filter" title="A study that selects its participants from a population, or group of people, decided on in advance by the researchers. These studies are not open to everyone who meets the Eligibility Criteria but only to people in that particular population, who are specifically invited to participate."><input type="checkbox" class="StudiesCB ct-facetCB ct-filter" id="enrollingByInvCB" name="recrs" value="f" tabIndex="10"
+				/> Enrolling by invitation</label>
+</li>
+			            <li class="ct-facet">	<label for="activeCB" class="StudiesCB ct-facetCB ct-filter" title="The study is ongoing (that is, participants are receiving an intervention or being examined), but potential participants are not currently being recruited or enrolled."><input type="checkbox" class="StudiesCB ct-facetCB ct-filter" id="activeCB" name="recrs" value="d" tabIndex="11"
+				/> Active, not recruiting</label>
+</li>
+			            <li class="ct-facet">	<label for="suspendedCB" class="StudiesCB ct-facetCB ct-filter" title="The study has stopped recruiting or enrolling participants early but may start again."><input type="checkbox" class="StudiesCB ct-facetCB ct-filter" id="suspendedCB" name="recrs" value="g" tabIndex="12"
+				/> Suspended</label>
+</li>
+			            <li class="ct-facet">	<label for="terminatedCB" class="StudiesCB ct-facetCB ct-filter" title="The study has stopped recruiting or enrolling participants early and will not start again. Participants are no longer being examined or treated."><input type="checkbox" class="StudiesCB ct-facetCB ct-filter" id="terminatedCB" name="recrs" value="h" tabIndex="13"
+				/> Terminated</label>
+</li>
+			            <li class="ct-facet">	<label for="completedCB" class="StudiesCB ct-facetCB ct-filter" title="The study has ended normally, and participants are no longer being examined or treated (that is, the &quot;last subject, last visit&quot; has occurred)."><input type="checkbox" class="StudiesCB ct-facetCB ct-filter" id="completedCB" name="recrs" value="e" tabIndex="14"
+				/> Completed</label>
+</li>
+			            <li class="ct-facet">	<label for="withdrawnCB" class="StudiesCB ct-facetCB ct-filter" title="The study stopped early, before enrolling its first participant."><input type="checkbox" class="StudiesCB ct-facetCB ct-filter" id="withdrawnCB" name="recrs" value="i" tabIndex="15"
+				/> Withdrawn</label>
+</li>
+			            <li class="ct-facet">	<label for="UnknownCB" class="StudiesCB ct-facetCB ct-filter" title="A study in ClinicalTrials.gov whose last known status was Recruiting; Not yet recruiting; or Active, not recruiting but the study has passed its completion date and the status has not been verified within the past 2 years."><input type="checkbox" class="StudiesCB ct-facetCB ct-filter" id="UnknownCB" name="recrs" value="m" tabIndex="16"
+				/> Unknown status</label>
+</li>
+					</ul>
+				</div>
+				<div class="ct-facetLegendCB w3-col w3-half" style="padding-top:1px;">
+					<div class="ct-facetLegendCB" style="font-size:inherit;"><span style="display:inline;" class="term" data-term="Expanded access status" title="Show definition">Expanded Access</span>:</div>
+					<ul class="ct-facetCB">
+			            <li class="ct-facet">	<label for="availableCB" class="EAStudiesCB ct-facetCB ct-filter" title="Expanded access is currently available for this study intervention."><input type="checkbox" class="EAStudiesCB ct-facetCB ct-filter" id="availableCB" name="recrs" value="c" tabIndex="17"
+				/> Available</label>
+</li>
+			            <li class="ct-facet">	<label for="NoLongerAvailCB" class="EAStudiesCB ct-facetCB ct-filter" title="Expanded access was available for this intervention previously but is not currently available and will not be available in the future."><input type="checkbox" class="EAStudiesCB ct-facetCB ct-filter" id="NoLongerAvailCB" name="recrs" value="j" tabIndex="18"
+				/> No longer available</label>
+</li>
+			            <li class="ct-facet">	<label for="tempNotAvailCB" class="EAStudiesCB ct-facetCB ct-filter" title="Expanded access is not currently available for this intervention but is expected to be available in the future."><input type="checkbox" class="EAStudiesCB ct-facetCB ct-filter" id="tempNotAvailCB" name="recrs" value="k" tabIndex="19"
+				/> Temporarily not available</label>
+</li>
+			            <li class="ct-facet">	<label for="ApprovedForMarketCB" class="EAStudiesCB ct-facetCB ct-filter" title="Applies to expanded access . The intervention has been approved by the Food and Drug Administration for use by the public."><input type="checkbox" class="EAStudiesCB ct-facetCB ct-filter" id="ApprovedForMarketCB" name="recrs" value="l" tabIndex="20"
+				/> Approved for marketing</label>
+</li>
+					</ul>
+				</div>
+			</div>
+        </div>
+    </div>
+
+    <!-- Eligibility ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <div class="w3-row">
+      	<div class="w3-col w3-left-align" style="white-space:nowrap;font-size:large;"><strong>Eligibility Criteria:</strong></div>
+    </div>
+
+    <div class="w3-row">
+        <div class="w3-col m3 w3-right-align ct-small-left ct-inputFieldLabel" style="padding-top:3.5ex;">
+          <label for="IncludeAgeValue"><span style="display:inline;" class="term" data-term="Age or age group" title="Show definition">Age</span>: &nbsp;</label>
+        </div>
+        <div class="w3-col m9 w3-left-align">
+	        <div style="vertical-align:middle;">
+		  				  			          	<div class="ct-flexible" style="display:inline-flex;white-space:nowrap;">
+			        <input class="ct-textInputField" type="text" name="age_v" id="IncludeAgeValue" value="" tabIndex="21" size="4" maxlength="8" pattern="[0-9]*\.?[0-9]*" title="Numeric age in years. Use decimal for partial years such as '23.5'"/>
+			        <button class="ct-clearField" style="margin-right:0.5em;" type="button" aria-label="Clear the Age field" title="Clear the Age field" onclick="$('#IncludeAgeValue').val('');">x</button>
+					<span style="padding-top:10px;margin-left:4px;">years<span style="margin:8px 16px;">OR</span></span>
+				</div>
+				<div style="display:inline-block;vertical-align:middle;white-space:nowrap;">
+<strong><span style="display:inline;" class="term" data-term="Age or age group" title="Show definition">Age Group</span>: &nbsp;</strong>
+			        <div style="display:inline-block;vertical-align:middle;white-space:nowrap;">
+		  								        <label class="ct-facetCB ct-filter" for="IncludeChild"><input type="checkbox" class="ct-filter" name="age" id="IncludeChild" value="0"
+				           tabIndex="22"/> Child (birth&#8211;17)</label><br/>
+		  								        <label class="ct-facetCB ct-filter" for="IncludeAdult"><input type="checkbox" class="ct-filter" name="age" id="IncludeAdult" value="1"
+				           tabIndex="23"/> Adult (18&#8211;64)</label><br/>
+		  								        <label class="ct-facetCB ct-filter" for="IncludeSenior"><input type="checkbox" class="ct-filter" name="age" id="IncludeSenior" value="2"
+			          	   tabIndex="24"/> Older Adult (65+)</label>
+			          </div>
+			     </div>
+			</div>
+        </div>
+    </div>
+
+    <div class="w3-row w3-padding-4">
+        <div class="w3-col m3 w3-right-align ct-small-left ct-inputFieldLabel" style="white-space: nowrap;">
+          <label for="Gender"><span style="display:inline;" class="term" data-term="Sex" title="Show definition">Sex</span>: &nbsp;</label>
+        </div>
+        <div class="w3-col m6 w3-left-align ct-flexible">
+		            <select class="ct-selectInputField" name="gndr" id="Gender" tabIndex="25">
+            <option value="">All &nbsp;</option>
+            <option value="Female"  >Studies with Female Participants &nbsp;</option>
+            <option value="Male"  >Studies with Male Participants &nbsp;</option>
+          </select>
+		  <button class="ct-clearFieldIE" type="button" aria-label="Set the Sex field to the default (All Studies)" title="Set the Sex field to the default (All Studies)" onclick="$('#Gender').val('');">x</button>
+        </div>
+    </div>
+
+    <div class="w3-row w3-padding-4">
+    	<div class="w3-col m3 w3-right-align ct-small-left ct-inputFieldLabel">
+    		<span style="display:inline;" class="term" data-term="Accepts Healthy Volunteers" title="Show definition">Accepts Healthy Volunteers</span>: &nbsp;
+    	</div>
+        <div class="w3-col m7 w3-left-align ct-flexible" style="padding-top:8px;">
+		            <label class="ct-facetCB ct-filter" for="AcceptsHealthy"><input type="checkbox" class="ct-filter" name="hlth" id="AcceptsHealthy" value="Y"
+             tabIndex="26"/> Healthy volunteers may participate in the study</label>
+        </div>
+    </div>
+
+    <!-- Targeted Fields ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+    <div class="w3-row w3-padding-8">
+      	<div class="w3-col w3-left-align" style="white-space:nowrap;font-size:large;"><strong>Targeted Search:</strong></div>
+    </div>
+
+    <div class="w3-row w3-padding-4">
+        <div class="w3-col m3 w3-right-align ct-small-left ct-inputFieldLabel">
+          <label for="Interventions"><span style="display:inline;" class="term" data-term="Intervention/treatment" title="Show definition">Intervention/treatment</span>: &nbsp;</label>
+        </div>
+        <div class="w3-col m6 w3-left-align ct-flexible">
+ 		            <input class="ct-textInputField" type="text" name="intr" id="Interventions" value="" maxlength="250" tabIndex="27"/>
+		  <button class="ct-clearField" type="button" aria-label="Clear the Interventions/treatment field" title="Clear the Interventions/treatment field" onclick="$('#Interventions').val('');">x</button>
+          <div style="display:none" id="Interventions-ExtensionsId"><ul><li>&nbsp;</li></ul></div>
+          <script type="text/javascript"> new ExtensionsMgr("Interventions","Interventions-ExtensionsId",null,"/ct2/rpc/extend/drug"); </script><noscript></noscript>
+        </div>
+    </div>
+
+    <div class="w3-row w3-padding-4">
+        <div class="w3-col m3 w3-right-align ct-small-left ct-inputFieldLabel">
+          <label for="Titles"><span style="display:inline;" class="term" data-term="Title" title="Show definition">Title</span> / <span style="display:inline;" class="term" data-term="Title Acronym" title="Show definition">Acronym</span>: &nbsp;</label>
+        </div>
+        <div class="w3-col m6 w3-left-align ct-flexible">
+		            <input class="ct-textInputField" type="text" name="titles" id="Titles" value="" maxlength="250" tabIndex="28"/>
+		  <button class="ct-clearField" type="button" aria-label="Clear the Title Acronym/Titles field" title="Clear the Title Acronym/Titles field" onclick="$('#Titles').val('');">x</button>
+        </div>
+    </div>
+
+    <div class="w3-row w3-padding-4">
+        <div class="w3-col m3 w3-right-align ct-small-left ct-inputFieldLabel" style="white-space: nowrap;">
+          <label for="OutcomeMeasures"><span style="display:inline;" class="term" data-term="Outcome Measure" title="Show definition">Outcome Measure</span>: &nbsp;</label>
+        </div>
+        <div class="w3-col m6 w3-left-align ct-flexible">
+		            <input class="ct-textInputField" type="text" name="outc" id="OutcomeMeasures" value="" maxlength="250" tabIndex="29"/>
+		  <button class="ct-clearField" type="button" aria-label="Clear the Outcome Measures field" title="Clear the Outcome Measures field" onclick="$('#OutcomeMeasures').val('');">x</button>
+        </div>
+    </div>
+
+    <div class="w3-row w3-padding-4">
+        <div class="w3-col m3 w3-right-align ct-small-left ct-inputFieldLabel">
+          <label for="Sponsors">
+<span style="display:inline;" class="term" data-term="Sponsor" title="Show definition">Sponsor</span> / <span style="display:inline;" class="term" data-term="Collaborator" title="Show definition">Collaborator</span>: &nbsp;</label>
+        </div>
+        <div class="w3-col m6 w3-left-align ct-flexible">
+		            <input class="ct-textInputField" type="text" name="spons" id="Sponsors" value="" maxlength="250" tabIndex="30"/>
+		  <button class="ct-clearField" type="button" aria-label="Clear the Sponsor/Collaborators field" title="Clear the Sponsor/Collaborators field" onclick="$('#Sponsors').val('');">x</button>
+        </div>
+        <div class="w3-col m3 w3-left-align ct-flexible" style="padding-left:0.5em;padding-top:8px;">
+		            <label class="ct-facetCB ct-filter" for="SponsorsExact"><input type="checkbox" class="ct-filter" name="spons_ex" id="SponsorsExact" value="Y"  tabIndex="31"/> Exact match</label>
+		</div>
+    </div>
+
+    <div class="w3-row w3-padding-4">
+        <div class="w3-col m3 w3-right-align ct-small-left ct-inputFieldLabel" style="white-space: nowrap;">
+          <label for="LeadSponsors"><span style="display:inline;" class="term" data-term="Sponsor" title="Show definition">Sponsor (Lead)</span>: &nbsp;</label>
+        </div>
+        <div class="w3-col m6 w3-left-align ct-flexible">
+		            <input class="ct-textInputField" type="text" name="lead" id="LeadSponsors" value="" maxlength="250" tabIndex="32"/>
+		  <button class="ct-clearField" type="button" aria-label="Clear the Lead Sponsor field" title="Clear the Lead Sponsor field" onclick="$('#LeadSponsors').val('');">x</button>          
+        </div>
+        <div class="w3-col m3 w3-left-align ct-flexible" style="padding-left:0.5em;padding-top:8px;">
+		  		  <label class="ct-facetCB ct-filter" for="LeadSponsorsExact"><input type="checkbox" class="ct-filter" name="lead_ex" id="LeadSponsorsExact" value="Y"  tabIndex="33"/> Exact match</label>
+		</div>
+    </div>
+
+    <div class="w3-row w3-padding-4">
+        <div class="w3-col m3 w3-right-align ct-small-left ct-inputFieldLabel" style="white-space: nowrap;">
+          <label for="StudyIds"><span style="display:inline;" class="term" data-term="Study IDs" title="Show definition">Study IDs</span>: &nbsp;</label>
+        </div>
+        <div class="w3-col m6 w3-left-align ct-flexible">
+		            <input class="ct-textInputField" type="text" name="id" id="StudyIds" value="" maxlength="250" tabIndex="34"/>
+		  <button class="ct-clearField" type="button" aria-label="Clear the Study IDs field" title="Clear the Study IDs field" onclick="$('#StudyIds').val('');">x</button>
+        </div>
+    </div>
+
+    <!-- Locations Fields ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+    <div class="w3-row w3-padding-4">
+      	<div class="w3-col w3-left-align" style="white-space:nowrap;font-size:large;"><strong>Locations:</strong></div>
+    </div>
+
+	<div class="w3-row" title="Country with at least one study trial location">
+		<div class="w3-col m3 w3-right-align ct-small-left ct-inputFieldLabel" style="white-space: nowrap;">
+		    <label for="Country"><span style="display:inline;" class="term" data-term="Country" title="Show definition">Country</span>: &nbsp;</label>
+		</div>
+		<div class="w3-col m6 w3-left-align ct-flexible">
+			<select id="Country" class="ct-selectInputField" name="cntry" tabindex="35">
+	    			        	<option value=""  selected="selected"  ></option>
+	        		        	<option value="US"  >United States</option>
+	        		        	<option value="AF"  >Afghanistan</option>
+	        		        	<option value="AL"  >Albania</option>
+	        		        	<option value="DZ"  >Algeria</option>
+	        		        	<option value="AS"  >American Samoa</option>
+	        		        	<option value="AD"  >Andorra</option>
+	        		        	<option value="AO"  >Angola</option>
+	        		        	<option value="AG"  >Antigua and Barbuda</option>
+	        		        	<option value="AR"  >Argentina</option>
+	        		        	<option value="AM"  >Armenia</option>
+	        		        	<option value="AW"  >Aruba</option>
+	        		        	<option value="AU"  >Australia</option>
+	        		        	<option value="AT"  >Austria</option>
+	        		        	<option value="AZ"  >Azerbaijan</option>
+	        		        	<option value="BS"  >Bahamas</option>
+	        		        	<option value="BH"  >Bahrain</option>
+	        		        	<option value="BD"  >Bangladesh</option>
+	        		        	<option value="BB"  >Barbados</option>
+	        		        	<option value="BY"  >Belarus</option>
+	        		        	<option value="BE"  >Belgium</option>
+	        		        	<option value="BZ"  >Belize</option>
+	        		        	<option value="BJ"  >Benin</option>
+	        		        	<option value="BM"  >Bermuda</option>
+	        		        	<option value="BT"  >Bhutan</option>
+	        		        	<option value="BO"  >Bolivia</option>
+	        		        	<option value="BA"  >Bosnia and Herzegovina</option>
+	        		        	<option value="BW"  >Botswana</option>
+	        		        	<option value="BR"  >Brazil</option>
+	        		        	<option value="BN"  >Brunei Darussalam</option>
+	        		        	<option value="BG"  >Bulgaria</option>
+	        		        	<option value="BF"  >Burkina Faso</option>
+	        		        	<option value="BI"  >Burundi</option>
+	        		        	<option value="KH"  >Cambodia</option>
+	        		        	<option value="CM"  >Cameroon</option>
+	        		        	<option value="CA"  >Canada</option>
+	        		        	<option value="CV"  >Cape Verde</option>
+	        		        	<option value="KY"  >Cayman Islands</option>
+	        		        	<option value="CF"  >Central African Republic</option>
+	        		        	<option value="TD"  >Chad</option>
+	        		        	<option value="CL"  >Chile</option>
+	        		        	<option value="CN"  >China</option>
+	        		        	<option value="CO"  >Colombia</option>
+	        		        	<option value="KM"  >Comoros</option>
+	        		        	<option value="CG"  >Congo</option>
+	        		        	<option value="CD"  >Congo, The Democratic Republic of the</option>
+	        		        	<option value="CR"  >Costa Rica</option>
+	        		        	<option value="HR"  >Croatia</option>
+	        		        	<option value="CU"  >Cuba</option>
+	        		        	<option value="CY"  >Cyprus</option>
+	        		        	<option value="CZ"  >Czech Republic</option>
+	        		        	<option value="CI"  >C&#244;te D&apos;Ivoire</option>
+	        		        	<option value="DK"  >Denmark</option>
+	        		        	<option value="DJ"  >Djibouti</option>
+	        		        	<option value="DM"  >Dominica</option>
+	        		        	<option value="DO"  >Dominican Republic</option>
+	        		        	<option value="EC"  >Ecuador</option>
+	        		        	<option value="EG"  >Egypt</option>
+	        		        	<option value="SV"  >El Salvador</option>
+	        		        	<option value="GQ"  >Equatorial Guinea</option>
+	        		        	<option value="ER"  >Eritrea</option>
+	        		        	<option value="EE"  >Estonia</option>
+	        		        	<option value="ET"  >Ethiopia</option>
+	        		        	<option value="FO"  >Faroe Islands</option>
+	        		        	<option value="FJ"  >Fiji</option>
+	        		        	<option value="FI"  >Finland</option>
+	        		        	<option value="CS"  >Former Serbia and Montenegro</option>
+	        		        	<option value="YU"  >Former Yugoslavia</option>
+	        		        	<option value="FR"  >France</option>
+	        		        	<option value="GF"  >French Guiana</option>
+	        		        	<option value="PF"  >French Polynesia</option>
+	        		        	<option value="GA"  >Gabon</option>
+	        		        	<option value="GM"  >Gambia</option>
+	        		        	<option value="GE"  >Georgia</option>
+	        		        	<option value="DE"  >Germany</option>
+	        		        	<option value="GH"  >Ghana</option>
+	        		        	<option value="GI"  >Gibraltar</option>
+	        		        	<option value="GR"  >Greece</option>
+	        		        	<option value="GL"  >Greenland</option>
+	        		        	<option value="GD"  >Grenada</option>
+	        		        	<option value="GP"  >Guadeloupe</option>
+	        		        	<option value="GU"  >Guam</option>
+	        		        	<option value="GT"  >Guatemala</option>
+	        		        	<option value="GN"  >Guinea</option>
+	        		        	<option value="GW"  >Guinea-Bissau</option>
+	        		        	<option value="GY"  >Guyana</option>
+	        		        	<option value="HT"  >Haiti</option>
+	        		        	<option value="VA"  >Holy See (Vatican City State)</option>
+	        		        	<option value="HN"  >Honduras</option>
+	        		        	<option value="HK"  >Hong Kong</option>
+	        		        	<option value="HU"  >Hungary</option>
+	        		        	<option value="IS"  >Iceland</option>
+	        		        	<option value="IN"  >India</option>
+	        		        	<option value="ID"  >Indonesia</option>
+	        		        	<option value="IR"  >Iran, Islamic Republic of</option>
+	        		        	<option value="IQ"  >Iraq</option>
+	        		        	<option value="IE"  >Ireland</option>
+	        		        	<option value="IL"  >Israel</option>
+	        		        	<option value="IT"  >Italy</option>
+	        		        	<option value="JM"  >Jamaica</option>
+	        		        	<option value="JP"  >Japan</option>
+	        		        	<option value="JE"  >Jersey</option>
+	        		        	<option value="JO"  >Jordan</option>
+	        		        	<option value="KZ"  >Kazakhstan</option>
+	        		        	<option value="KE"  >Kenya</option>
+	        		        	<option value="KI"  >Kiribati</option>
+	        		        	<option value="KP"  >Korea, Democratic People&apos;s Republic of</option>
+	        		        	<option value="KR"  >Korea, Republic of</option>
+	        		        	<option value="KW"  >Kuwait</option>
+	        		        	<option value="KG"  >Kyrgyzstan</option>
+	        		        	<option value="LA"  >Lao People&apos;s Democratic Republic</option>
+	        		        	<option value="LV"  >Latvia</option>
+	        		        	<option value="LB"  >Lebanon</option>
+	        		        	<option value="LS"  >Lesotho</option>
+	        		        	<option value="LR"  >Liberia</option>
+	        		        	<option value="LY"  >Libyan Arab Jamahiriya</option>
+	        		        	<option value="LI"  >Liechtenstein</option>
+	        		        	<option value="LT"  >Lithuania</option>
+	        		        	<option value="LU"  >Luxembourg</option>
+	        		        	<option value="MO"  >Macau</option>
+	        		        	<option value="MK"  >Macedonia, The Former Yugoslav Republic of</option>
+	        		        	<option value="MG"  >Madagascar</option>
+	        		        	<option value="MW"  >Malawi</option>
+	        		        	<option value="MY"  >Malaysia</option>
+	        		        	<option value="MV"  >Maldives</option>
+	        		        	<option value="ML"  >Mali</option>
+	        		        	<option value="MT"  >Malta</option>
+	        		        	<option value="MQ"  >Martinique</option>
+	        		        	<option value="MR"  >Mauritania</option>
+	        		        	<option value="MU"  >Mauritius</option>
+	        		        	<option value="YT"  >Mayotte</option>
+	        		        	<option value="MX"  >Mexico</option>
+	        		        	<option value="MD"  >Moldova, Republic of</option>
+	        		        	<option value="MC"  >Monaco</option>
+	        		        	<option value="MN"  >Mongolia</option>
+	        		        	<option value="ME"  >Montenegro</option>
+	        		        	<option value="MS"  >Montserrat</option>
+	        		        	<option value="MA"  >Morocco</option>
+	        		        	<option value="MZ"  >Mozambique</option>
+	        		        	<option value="MM"  >Myanmar</option>
+	        		        	<option value="NA"  >Namibia</option>
+	        		        	<option value="NP"  >Nepal</option>
+	        		        	<option value="NL"  >Netherlands</option>
+	        		        	<option value="AN"  >Netherlands Antilles</option>
+	        		        	<option value="NC"  >New Caledonia</option>
+	        		        	<option value="NZ"  >New Zealand</option>
+	        		        	<option value="NI"  >Nicaragua</option>
+	        		        	<option value="NE"  >Niger</option>
+	        		        	<option value="NG"  >Nigeria</option>
+	        		        	<option value="MP"  >Northern Mariana Islands</option>
+	        		        	<option value="NO"  >Norway</option>
+	        		        	<option value="OM"  >Oman</option>
+	        		        	<option value="PK"  >Pakistan</option>
+	        		        	<option value="PA"  >Panama</option>
+	        		        	<option value="PG"  >Papua New Guinea</option>
+	        		        	<option value="PY"  >Paraguay</option>
+	        		        	<option value="PE"  >Peru</option>
+	        		        	<option value="PH"  >Philippines</option>
+	        		        	<option value="PL"  >Poland</option>
+	        		        	<option value="PT"  >Portugal</option>
+	        		        	<option value="PR"  >Puerto Rico</option>
+	        		        	<option value="QA"  >Qatar</option>
+	        		        	<option value="RO"  >Romania</option>
+	        		        	<option value="RU"  >Russian Federation</option>
+	        		        	<option value="RW"  >Rwanda</option>
+	        		        	<option value="RE"  >R&#233;union</option>
+	        		        	<option value="KN"  >Saint Kitts and Nevis</option>
+	        		        	<option value="LC"  >Saint Lucia</option>
+	        		        	<option value="VC"  >Saint Vincent and the Grenadines</option>
+	        		        	<option value="WS"  >Samoa</option>
+	        		        	<option value="SM"  >San Marino</option>
+	        		        	<option value="SA"  >Saudi Arabia</option>
+	        		        	<option value="SN"  >Senegal</option>
+	        		        	<option value="RS"  >Serbia</option>
+	        		        	<option value="SC"  >Seychelles</option>
+	        		        	<option value="SL"  >Sierra Leone</option>
+	        		        	<option value="SG"  >Singapore</option>
+	        		        	<option value="SK"  >Slovakia</option>
+	        		        	<option value="SI"  >Slovenia</option>
+	        		        	<option value="SB"  >Solomon Islands</option>
+	        		        	<option value="SO"  >Somalia</option>
+	        		        	<option value="ZA"  >South Africa</option>
+	        		        	<option value="SS"  >South Sudan</option>
+	        		        	<option value="ES"  >Spain</option>
+	        		        	<option value="LK"  >Sri Lanka</option>
+	        		        	<option value="SD"  >Sudan</option>
+	        		        	<option value="SR"  >Suriname</option>
+	        		        	<option value="SZ"  >Swaziland</option>
+	        		        	<option value="SE"  >Sweden</option>
+	        		        	<option value="CH"  >Switzerland</option>
+	        		        	<option value="SY"  >Syrian Arab Republic</option>
+	        		        	<option value="TW"  >Taiwan</option>
+	        		        	<option value="TJ"  >Tajikistan</option>
+	        		        	<option value="TZ"  >Tanzania</option>
+	        		        	<option value="TH"  >Thailand</option>
+	        		        	<option value="TG"  >Togo</option>
+	        		        	<option value="TT"  >Trinidad and Tobago</option>
+	        		        	<option value="TN"  >Tunisia</option>
+	        		        	<option value="TR"  >Turkey</option>
+	        		        	<option value="UG"  >Uganda</option>
+	        		        	<option value="UA"  >Ukraine</option>
+	        		        	<option value="AE"  >United Arab Emirates</option>
+	        		        	<option value="GB"  >United Kingdom</option>
+	        		        	<option value="US"  >United States</option>
+	        		        	<option value="UY"  >Uruguay</option>
+	        		        	<option value="UZ"  >Uzbekistan</option>
+	        		        	<option value="VU"  >Vanuatu</option>
+	        		        	<option value="VE"  >Venezuela</option>
+	        		        	<option value="VN"  >Vietnam</option>
+	        		        	<option value="VI"  >Virgin Islands (U.S.)</option>
+	        		        	<option value="YE"  >Yemen</option>
+	        		        	<option value="ZM"  >Zambia</option>
+	        		        	<option value="ZW"  >Zimbabwe</option>
+	        		    	</select>
+			<button class="ct-clearFieldIE" type="button" aria-label="Clear the Country field" title="Clear the Country field" onclick="$('#Country').val('');$('#Country').trigger('change');">x</button>
+	  	</div>
+	</div>
+	<div class="w3-row" id="StateRow" style="display:none;">
+		<div class="w3-col m3">&nbsp;</div>
+		<div class="w3-col m9">
+			<div class="w3-row">
+				<div id="StateField" class="w3-col m5 w3-left-align ct-small-left">
+							<label for="State" class="ct-inputFieldLabel"><span style="display:inline;" class="term" data-term="State" title="Show definition">State</span></label>
+					<div class="ct-flexible" title="State name (United States only) for a study trial location" >
+						<select id="State" class="ct-selectInputField" name="state" tabindex="36"> 
+														<option value=""  selected="selected"  ></option>
+														<option value="US:AL"  >Alabama</option>
+														<option value="US:AK"  >Alaska</option>
+														<option value="US:AZ"  >Arizona</option>
+														<option value="US:AR"  >Arkansas</option>
+														<option value="US:CA"  >California</option>
+														<option value="US:CO"  >Colorado</option>
+														<option value="US:CT"  >Connecticut</option>
+														<option value="US:DE"  >Delaware</option>
+														<option value="US:DC"  >District of Columbia</option>
+														<option value="US:FL"  >Florida</option>
+														<option value="US:GA"  >Georgia</option>
+														<option value="US:HI"  >Hawaii</option>
+														<option value="US:ID"  >Idaho</option>
+														<option value="US:IL"  >Illinois</option>
+														<option value="US:IN"  >Indiana</option>
+														<option value="US:IA"  >Iowa</option>
+														<option value="US:KS"  >Kansas</option>
+														<option value="US:KY"  >Kentucky</option>
+														<option value="US:LA"  >Louisiana</option>
+														<option value="US:ME"  >Maine</option>
+														<option value="US:MD"  >Maryland</option>
+														<option value="US:MA"  >Massachusetts</option>
+														<option value="US:MI"  >Michigan</option>
+														<option value="US:MN"  >Minnesota</option>
+														<option value="US:MS"  >Mississippi</option>
+														<option value="US:MO"  >Missouri</option>
+														<option value="US:MT"  >Montana</option>
+														<option value="US:NE"  >Nebraska</option>
+														<option value="US:NV"  >Nevada</option>
+														<option value="US:NH"  >New Hampshire</option>
+														<option value="US:NJ"  >New Jersey</option>
+														<option value="US:NM"  >New Mexico</option>
+														<option value="US:NY"  >New York</option>
+														<option value="US:NC"  >North Carolina</option>
+														<option value="US:ND"  >North Dakota</option>
+														<option value="US:OH"  >Ohio</option>
+														<option value="US:OK"  >Oklahoma</option>
+														<option value="US:OR"  >Oregon</option>
+														<option value="US:PA"  >Pennsylvania</option>
+														<option value="US:RI"  >Rhode Island</option>
+														<option value="US:SC"  >South Carolina</option>
+														<option value="US:SD"  >South Dakota</option>
+														<option value="US:TN"  >Tennessee</option>
+														<option value="US:TX"  >Texas</option>
+														<option value="US:UT"  >Utah</option>
+														<option value="US:VT"  >Vermont</option>
+														<option value="US:VA"  >Virginia</option>
+														<option value="US:WA"  >Washington</option>
+														<option value="US:WV"  >West Virginia</option>
+														<option value="US:WI"  >Wisconsin</option>
+														<option value="US:WY"  >Wyoming</option>
+													</select>
+						<button class="ct-clearFieldIE" type="button" aria-label="Clear the State field" title="Clear the State field" onclick="$('#State').val('');$('#State').trigger('change');">x</button>
+					</div>
+										<span id="StateWarning" style="color:red"></span>
+				</div>
+				<div class="w3-col m5 w3-left-align ct-small-left ">
+							<label for="City" class="ct-inputFieldLabel"><span style="display:inline;" class="term" data-term="City and distance" title="Show definition">City</span></label>
+					<div class="ct-flexible" title="City name for a study trial location" >
+						<input id="City" class="ct-textInputField" name="city" tabindex="37" maxlength="250" type="text" value="">
+						<button class="ct-clearField" type="button" aria-label="Clear the City field" title="Clear the City field" onclick="$('#City').val('');$('#City').trigger('change');">x</button>
+						<div style="display:none" id="City-ExtensionsId"><ul><li>&nbsp;</li></ul></div>
+						<script type="text/javascript"> new ExtensionsMgr("City","City-ExtensionsId",["Country","State"],"/ct2/rpc/extend/geo"); </script><noscript></noscript>
+					</div>
+				</div>
+				<div class="w3-col m2 w3-left-align ct-small-left">
+							<label for="Distance" class="ct-inputFieldLabel"><span style="display:inline;" class="term" data-term="City and distance" title="Show definition">Distance</span></label>
+					<div class="ct-flexible" title="Maximum distance, in miles, from the City">
+						<select id="Distance" class="ct-selectInputField" name="dist" tabindex="38">
+							<option value=""  selected="selected"></option>
+							<option value="50" >50 miles</option>
+							<option value="100" >100 miles</option>
+							<option value="200" >200 miles</option>
+							<option value="300" >300 miles</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+    <div class="w3-row w3-padding-8">
+        <div class="w3-col m3 w3-right-align ct-small-left ct-inputFieldLabel" style="white-space: nowrap;">
+          <label for="LocationTerms"><span style="display:inline;" class="term" data-term="Location Terms" title="Show definition">Location Terms</span>: &nbsp;</label>
+        </div>
+        <div class="w3-col m6 w3-left-align ct-flexible">
+		            <input class="ct-textInputField" type="text" name="locn" id="LocationTerms" value="" maxlength="250" tabIndex="39"/>
+		  <button class="ct-clearField" type="button" aria-label="Clear the Location Terms field" title="Clear the Location Terms field" onclick="$('#LocationTerms').val('');">x</button>
+        </div>
+    </div>
+
+ 
