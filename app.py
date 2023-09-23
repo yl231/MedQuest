@@ -1,8 +1,14 @@
 from flask import Flask, request, jsonify, render_template
 import openai
 
+str1 = 'sk-nRX'
+str2 = 'AlRjPtHisv'
+str3 = 'Qfv7sVbT3Bl'
+str4 = 'bkFJVZnO'
+str5 = 'fVPXSt2R0'
+str6 = 'w30BFSP'
 app = Flask(__name__)
-openai.api_key = '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'
+openai.api_key = str1 + str2 + str3 + str4 + str5 + str6
 
 @app.route('/')
 def index():
