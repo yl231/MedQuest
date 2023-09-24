@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head><script src="assets/js/color-modes.js"></script>
+<head><script src="../assets/js/color-modes.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,17 +12,17 @@
     <meta name="keywords" content="Clinical Trials" />
 
     <!-- import base.css初始化样式文件 -->
-    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="../css/base.css">
     <!-- import common.css公共样式 -->
-    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="../css/common.css">
     <!-- import index.css -->
-    <link rel="stylesheet" href="css/search-page.css">
-    <script src="js/jquery.min.js"></script>
+    <link rel="stylesheet" href="../css/search-page.css">
+    <script src="../js/jquery.min.js"></script>
     <!-- animate.js必须写到index.js的前面，因为index.js会调用它 -->
-    <script src="js/animate.js"></script>
+    <script src="../js/animate.js"></script>
     <!-- import js file -->
-    <script src="js/index.js"></script>
-    <script src="assets/js/color-modes.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../assets/js/color-modes.js"></script>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -37,7 +37,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 
-    <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
       .bd-placeholder-img {
@@ -370,33 +370,28 @@
         </footer>
       </div>
     <!-- footer module end -->
-  
 
-  
-  </main>
+</main>
 
-  <h1>Ask Your Health Concern</h1>
-  <input type="text" id="question" placeholder="Type your question here...">
-  <button onclick="getAnswer()">Ask</button>
-  <p id="answer">Answer:</p>
+<h1>Ask Your Health Concern</h1>
+<input type="text" id="question" placeholder="Type your question here...">
+<button onclick="getAnswer()">Ask</button>
+<p id="answer">Answer:</p>
 
-  <script>
-      async function getAnswer() {
-          const question = document.getElementById('question').value;
-          const response = await fetch('/get_answer', {
-              method: 'POST',
-              headers: {
-                  'Content-Type': 'application/json'
-              },
-              body: JSON.stringify({ question: question })
-          });
-          const data = await response.json();
-          document.getElementById('answer').innerText = data.answer;
-      }
-  </script>
-
-
-
+<script>
+    async function getAnswer() {
+        const question = document.getElementById('question').value;
+        const response = await fetch('/get_answer', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ question: question })
+        });
+        const data = await response.json();
+        document.getElementById('answer').innerText = data.answer;
+    }
+</script>
 </body>
 </html>
 
