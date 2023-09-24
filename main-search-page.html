@@ -6,7 +6,7 @@
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <meta name="referrer" content="origin-when-cross-origin"/>
   <title>Clinical Trials Search</title>
-  <script src="https://use.fontawesome.com/20a31629ec.js"></script>
+  <script src="JS/search-page.js"></script>
   <!-- import main-search-page.css -->
   <link rel="stylesheet" href="css/main-search-page.css">
   <!-- import base.css -->
@@ -212,18 +212,18 @@ $(document).ready(function() {
 	}
 </script><noscript></noscript>
 
-<!-- advanced search form -->
-  <form id="MainForm" method="get" action="/ct2/results" 
-  	onsubmit="sendSearchPing();" style="margin:0;">
-    
+<!-- advanced search form -->    
 	<fieldset class="w3-container adv-fieldset ct-StdBackground">
 	
     <div class="w3-row">
         <div class="w3-col m3 w3-container"></div>
         <div class="w3-col m6" style="padding:2ex 0;">
-          <input class="ct-searchButton" style="margin-right:1em" type="submit" aria-label="Submit Search" title="Submit Search" value="Search"/>
-          <a title="Show How to Use Advanced Search page - opens new window"  href="/ct2/help/help" onclick="openNewWindow('/ct2/help/help'); return false"
->Help</a><br/>
+    	  <div id="jsonData"></div>
+
+          <input class="ct-searchButton" style="margin-right:1em" type="submit" aria-label="Submit Search" onclick="searchByContent()" title="Submit Search" value="Search"/>
+          <!-- <a title="Show How to Use Advanced Search page - opens new window"  href="/ct2/help/help" onclick="openNewWindow('/ct2/help/help'); return false" -->
+          <!-- <a title="Show How to Use Advanced Search page - opens new window" onclick="searchByContent(); return false" -->
+		  >Help</a><br/>
         </div>
     </div>
       
@@ -257,14 +257,14 @@ $(document).ready(function() {
         	<label for="StudyType"><span style="display:inline;" class="term" data-term="Study Type" title="Show definition">Study type</span>: &nbsp;</label>
         </div>
         <div class="w3-col m6 w3-left-align ct-flexible">
-		            <select class="ct-selectInputField" name="type" id="StudyType" onchange="changeStudyType()" tabIndex="3">
-            <option value="">All Studies &nbsp;</option>
-            <option value="Intr"  >Interventional Studies (Clinical Trials)&nbsp;</option>
-            <option value="Obsr"  >Observational Studies &nbsp;</option>
-            <option value="PReg"  > &nbsp; -- Patient Registries &nbsp;</option>
-            <option value="Expn"  >Expanded Access Studies &nbsp;</option>
-          </select>
-		  <button class="ct-clearFieldIE" type="button" aria-label="Set the Study Type field to the default (All Studies)" title="Set the Study Type field to the default (All Studies)" onclick="$('#StudyType').val('');">x</button>
+			<select class="ct-selectInputField" name="type" id="StudyType" onchange="changeStudyType()" tabIndex="3">
+				<option value="">All Studies</option>
+				<option value="Intr"  >Interventional Studies (Clinical Trials)</option>
+				<option value="Obsr"  >Observational Studies</option>
+				<option value="PReg"  >-- Patient Registries</option>
+				<option value="Expn"  >Expanded Access Studies</option>
+           </select>
+		  <button class="ct-clearFieldIE" type="button" id='StudyTypeF' aria-label="Set the Study Type field to the default (All Studies)" title="Set the Study Type field to the default (All Studies)" onclick="$('#StudyType').val('');">x</button>
         </div>
     </div>
 

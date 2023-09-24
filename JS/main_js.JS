@@ -24,7 +24,7 @@ function fetchContentFromURL(url) {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
-            return response.text(); // Change to response.json() if you're expecting JSON data
+            return response.json(); // Change to response.json() if you're expecting JSON data
         })
         .then((data) => {
             // Do something with the retrieved data
