@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
+<head><script src="assets/js/color-modes.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>品优购商城-综合网购首选-正品低价、品质保障、配送及时、轻松购物！</title>
+    <title>MedQuest</title>
     <!-- web description -->
-    <meta name="description" content="为您提供愉快的网上购物体验！" />
+    <meta name="description" content="Search Medical/Clinical Trials Information in Our Website!" />
     
     <!-- keywords -->
-    <meta name="keywords" content="网上购物，网上商城" />
+    <meta name="keywords" content="Medical Trials" />
 
-    <!-- favicon icon  -->
-    <link rel="icon" href="/favicon01.ico" />
     <!-- import base.css初始化样式文件 -->
     <link rel="stylesheet" href="css/base.css">
     <!-- import common.css公共样式 -->
@@ -25,8 +23,6 @@
     <!-- import js file -->
     <script src="js/index.js"></script>
     <script src="assets/js/color-modes.js"></script>
-    <script src="JS/search-page.js"></script>
-
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -206,11 +202,9 @@
       <nav class="py-2 bg-body-tertiary border-bottom">
         <div class="container d-flex flex-wrap">
           <ul class="nav me-auto">
-            <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2 active" aria-current="page">Home</a></li>
-            <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">Features</a></li>
-            <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">Pricing</a></li>
-            <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">FAQs</a></li>
-            <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">About</a></li>
+            <li class="nav-item"><a href="index1.html" class="nav-link link-body-emphasis px-2 active" aria-current="page">Home: Search</a></li>
+            <li class="nav-item"><a href="templates/main_webpage.html" class="nav-link link-body-emphasis px-2">Medical AI</a></li>
+            <li class="nav-item"><a href="about.html" class="nav-link link-body-emphasis px-2">About Us</a></li>
           </ul>
           <ul class="nav">
             <li class="nav-item"><a href="login.html" class="nav-link link-body-emphasis px-2">Login</a></li>
@@ -226,55 +220,71 @@
               </svg>
                 <path d="M6 0a1 1 0 0 0-1 1v1a1 1 0 0 0-1 1v4H1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h6v-2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5V16h6a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-3V3a1 1 0 0 0-1-1V1a1 1 0 0 0-1-1H6Zm2.5 5.034v1.1l.953-.55.5.867L9 7l.953.55-.5.866-.953-.55v1.1h-1v-1.1l-.953.55-.5-.866L7 7l-.953-.55.5-.866.953.55v-1.1h1ZM2.25 9h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 2 9.75v-.5A.25.25 0 0 1 2.25 9Zm0 2h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5a.25.25 0 0 1 .25-.25ZM2 13.25a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5ZM13.25 9h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5a.25.25 0 0 1 .25-.25ZM13 11.25a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5Zm.25 1.75h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5a.25.25 0 0 1 .25-.25Z"/>
               </svg>
-            <span class="fs-4"> &#20 Clinical Trial</span>
+            <span class="fs-4"> &#20 Clinical Trial: Search</span>
           </a>
           <div class="d-flex align-items-center">
-            <form class="w-100 me-3" role="search">
-                <input type="search" class="form-control" placeholder="Search..." aria-label="Search" width="1000px" style="
-    width: 1000px;
-">
-            </form>
+            
           </div>
         </div>
       </header>
 
-          <!-- the header body -->
+          <!-- the header body -->  
           
     <!-- shortcut module start -->
 <!-- Search Button -->
-      <button type="submit" class="w-1300 btn btn-primary" onclick="searchByContent()">Submit</button>
-      <div id="jsonData"></div>
-				<!-- Condition or Disease -->
-				<div class="w-1300 w3-row w3-padding-4">
-					<div class="condition mb-3">
-            <label for="exampleInputEmail1" class="form-label">Condition or disease</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-				</div>
+      <button type="submit" class="w-1300 btn btn-primary">Submit</button>
+<!-- Condition or Disease -->
+<div class="w-1300 w3-row w3-padding-4">
+  <div class="condition mb-3">
+    <label for="exampleInputEmail1" class="form-label">Condition or disease</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+</div>
 
     <!-- General search terms (Other Terms) ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 		
-				<!-- Study Type  -->
-        <div class="w-1300 mb-3">
-          <label for="exampleSelect" class="form-label">Study Type</label>
-          <select class="form-select" id="exampleSelect">
-            <option value="all">All Studies</option>
-							<option value="Intr">Interventional Studies (Clinical Trials)</option>
-							<option value="Obsr">Observational Studies</option>
-							<option value="PReg">-- Patient Registries</option>
-							<option value="Expn">Expanded Access Studies</option>
-          </select>
-        </div>
+  <!-- Container for Study Type and Study Result with space -->
+  <div class="w-1300 mb-3 d-flex justify-content-between">
+    <!-- Study Type -->
+    <div>
+      <label for="studyTypeSelect" class="form-label">Study Type</label>
+      <select class="form-select" id="studyTypeSelect">
+        <option value="">All Studies</option>
+        <option value="Intr">Interventional Studies (Clinical Trials)</option>
+        <option value="Obsr">Observational Studies</option>
+        <option value="PReg">-- Patient Registries</option>
+        <option value="Expn">Expanded Access Studies</option>
+      </select>
+    </div>
 
-        <!-- Study Result -->
-        <div class="w-1300 mb-3">
-          <label for="exampleSelect" class="form-label">Study Result</label>
-          <select class="form-select" id="exampleSelect">
-            <option value="">All Studies</option>
-							<option value="Intr">Interventional Studies (Clinical Trials)</option>
-							<option value="With"  >Studies With Results &nbsp;</option>
-						<option value="Without"  >Studies Without Results &nbsp;</option>
-          </select>
-        </div>
+    <!-- Add some space between Study Type and Study Result -->
+    <div class="mx-3"></div>
+
+    <!-- Study Result -->
+    <div>
+      <label for="studyResultSelect" class="form-label">Study Result</label>
+      <select class="form-select" id="studyResultSelect">
+        <option value="">All Studies</option>
+        <option value="With">Studies With Results</option>
+        <option value="Without">Studies Without Results</option>
+      </select>
+    </div>
+  </div>
+  <!-- Condition or Disease -->
+<div class="w-1300 w3-row w3-padding-4">
+  <div class="condition mb-3" style="display: flex;">
+    <label for="exampleInputEmail1" class="form-label">Age</label>
+    <input style= "width: 50px; margin-left: 10px;" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style="max-width: 800px;">
+    <select style= "width: 50px; margin-left: 10px;"class="form-select" id="studyResultSelect">
+      <option value="">Years</option>
+      <option value="Intr">Months</option>
+      <option value="With">Weeks</option>
+      <option value="Without">Days</option>
+    </select>
+  </div>
+</div>
+
+
 				
 
     <!-- Recruitment ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -348,17 +358,15 @@
     <div class="container">
         <footer class="py-3 my-4">
           <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home: Search</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Medical AI</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About Us</a></li>
           </ul>
-          <p class="text-center text-body-secondary">&copy; 2023 Company, Inc</p>
+          <p class="text-center text-body-secondary">&copy; 2023 Hackathon MedQuest</p>
         </footer>
       </div>
     <!-- footer module end -->
 
+
 </body>
 </html>
-

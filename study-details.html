@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta content="initial-scale=1, maximum-scale=1, user-scalable=0" name="viewport" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <!-- Include Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container mt-4">
+        <h2>Study Details</h2>
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" id="studyTabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="overview-tab" data-toggle="tab" href="#overview" role="tab"
+                    aria-controls="overview" aria-selected="true">Overview</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="eligibility-tab" data-toggle="tab" href="#eligibility" role="tab"
+                    aria-controls="eligibility" aria-selected="false">Eligibility</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="discover-more-tab" data-toggle="tab" href="#discover-more" role="tab"
+                    aria-controls="discover-more" aria-selected="false">Discover More</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="sponsor-tab" data-toggle="tab" href="#sponsor" role="tab"
+                    aria-controls="sponsor" aria-selected="false">Sponsor</a>
+            </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content" id="studyTabsContent">
+            <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
+                <div id="studyOverview" class="border p-3 mt-3">
+                    <!-- Overview details will be displayed here -->
+                </div>
+            </div>
+            <div class="tab-pane fade" id="eligibility" role="tabpanel" aria-labelledby="eligibility-tab">
+                <div id="studyEligibility" class="border p-3 mt-3">
+                    <!-- Eligibility details will be displayed here -->
+                </div>
+            </div>
+            <div class="tab-pane fade" id="discover-more" role="tabpanel" aria-labelledby="discover-more-tab">
+                <div id="studyDiscoverMore" class="border p-3 mt-3">
+                    <!-- Detailed Description will be displayed here -->
+                </div>
+            </div>
+            <div class="tab-pane fade" id="sponsor" role="tabpanel" aria-labelledby="sponsor-tab">
+                <div id="studySponsor" class="border p-3 mt-3">
+                    <!-- Sponsor details will be displayed here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            // Retrieve the study ID from the query parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            const studyId = urlParams.get('studyId');
+
+            // Define the URL to fetch JSON data based on the study ID
+            const apiUrl = `https://classic.clinicaltrials.gov/api/query/full_studies?expr=${studyId}&max_rnk=1&fmt=json`;
+
+            // Fetch JSON data from the remote URL
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    // Call the function to display study details
+                    displayStudyDetails(data);
+                })
+                .catch(error => {
+                    // Handle any errors that occurred during the fetch
+                    console.error('Error fetching data:', error);
+                });
+
+            // Function to format and display study details
+            function displayStudyDetails(data) {
+                if (
+                    data &&
+                    data.FullStudiesResponse &&
+                    data.FullStudiesResponse.FullStudies &&
+                    data.FullStudiesResponse.FullStudies.length > 0
+                ) {
+                    const study = data.FullStudiesResponse.FullStudies[0];
+                    const protocol = study.Study.ProtocolSection;
+                    const status = protocol.StatusModule;
+                    const identification = protocol.IdentificationModule;
+                    const briefSummary = protocol.DescriptionModule.BriefSummary;
+                    const eligibilityCriteria = protocol.EligibilityModule.EligibilityCriteria;
+                    const sponsor = protocol.SponsorCollaboratorsModule.LeadSponsor;
+                    const detailedDescription = protocol.DescriptionModule.DetailedDescription;
+                    const eligibility = study.Study.ProtocolSection.EligibilityModule;
+
+                    // Create HTML content for the Overview tab
+                    const overviewHtml =
+                        '<p><strong>Study ID:</strong> ' + identification.NCTId + '</p>' +
+                        '<p><strong>Study Title:</strong> ' + identification.BriefTitle + '</p>' +
+                        '<p><strong>Overall Status:</strong> ' + status.OverallStatus + '</p>' +
+                        '<p><strong>Brief Summary:</strong> ' + briefSummary + '</p>' +
+                        '<p><strong>Healthy Volunteers:</strong> ' + eligibility.HealthyVolunteers + '</p>' +
+                        '<p><strong>Gender:</strong> ' + eligibility.Gender + '</p>' +
+                        '<p><strong>Minimum Age:</strong> ' + eligibility.MinimumAge + '</p>' +
+                        '<p><strong>Maximum Age:</strong> ' + eligibility.MaximumAge + '</p>' +
+                        '<p><strong>Standard Age:</strong> ' + eligibility.StdAgeList.StdAge.join(', ') + '</p>';
+
+                    // Create HTML content for the Discover More tab (including Detailed Description, Official Title, and Organization Full Name)
+                    const discoverMoreHtml =
+                        '<p><strong>Official Title:</strong> ' + identification.OfficialTitle + '</p>' +
+                        '<p><strong>Organization Full Name:</strong> ' + identification.Organization.OrgFullName + '</p>' +
+                        '<p><strong>Detailed Description:</strong> ' + detailedDescription + '</p>' +
+                        '<p><strong>Start Date:</strong> ' + status.StartDateStruct.StartDate + '</p>' +
+                        '<p><strong>Primary Completion Date:</strong> ' + status.PrimaryCompletionDateStruct.PrimaryCompletionDate + '</p>' +
+                        '<p><strong>Completion Date:</strong> ' + status.CompletionDateStruct.CompletionDate + '</p>';
+
+                    ;
+
+                    // Create HTML content for the Eligibility tab
+                    const eligibilityHtml =
+                        '<p><strong>Eligibility Criteria:</strong> ' + eligibilityCriteria + '</p>';
+
+                    // Create HTML content for the Sponsor tab
+                    const sponsorHtml =
+                        '<p><strong>Lead Sponsor:</strong> ' + sponsor.LeadSponsorName + '</p>' +
+                        '<p><strong>Sponsor Class:</strong> ' + sponsor.LeadSponsorClass + '</p>';
+
+                    // Display the content in respective tabs
+                    $('#studyOverview').html(overviewHtml);
+                    $('#studyEligibility').html(eligibilityHtml);
+                    $('#studyDiscoverMore').html(discoverMoreHtml);
+                    $('#studySponsor').html(sponsorHtml);
+                } else {
+                    // Handle the case where the data is missing or empty
+                    $('#studyOverview').html('<p>No study details available.</p>');
+                    $('#studyEligibility').html('<p>No eligibility details available.</p>');
+                    $('#studyDiscoverMore').html('<p>No detailed description available.</p>');
+                    $('#studySponsor').html('<p>No sponsor details available.</p>');
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

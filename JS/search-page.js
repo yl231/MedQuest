@@ -8,7 +8,7 @@ async function searchByContent(){
     const req = `https://classic.clinicaltrials.gov/api/query/study_fields?expr=${condition}&min_rnk=${min_rnk}&max_rnk=${max_studies + min_rnk - 1}&fields=NCTId,Condition,BriefTitle,OverallStatus,LocationCountry,MaximumAge,MinimumAge,StudyType&fmt=json`;
     console.log("url link: ", req)
     // Display the JSON URL
-    document.getElementById('jsonData').textContent = req;
+    // document.getElementById('jsonData').textContent = req;
 
     const jsData = await fetchContentFromURL(req);
     console.log(jsData);
