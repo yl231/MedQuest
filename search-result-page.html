@@ -46,6 +46,7 @@
                 $.each(studies, function (index, study) {
                     const protocol = study.Study.ProtocolSection;
                     const status = protocol.StatusModule;
+                    const studyId = protocol.IdentificationModule.NCTId; // Get the study ID
 
                     // Determine the text color based on the status
                     let textColorClass = '';
@@ -57,11 +58,14 @@
                         textColorClass = 'text-danger'; // Red text for other statuses
                     }
 
-                    // Append row with the determined text color
+                    // Create a clickable link for the study title
+                    const studyLink = '<a href="study-details.html?studyId=' + studyId + '">' + protocol.IdentificationModule.BriefTitle + '</a>';
+
+                    // Append row with the determined text color and clickable study title
                     $('#studyTable tbody').append(
                         '<tr>' +
                         '<td>' + protocol.IdentificationModule.NCTId + '</td>' +
-                        '<td>' + protocol.IdentificationModule.BriefTitle + '</td>' +
+                        '<td>' + studyLink + '</td>' +
                         '<td>' + status.StartDateStruct.StartDate + '</td>' +
                         '<td>' + status.CompletionDateStruct.CompletionDate + '</td>' +
                         '<td class="' + textColorClass + '">' + status.OverallStatus + '</td>' +
