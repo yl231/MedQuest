@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
+<head><script src="assets/js/color-modes.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>品优购商城-综合网购首选-正品低价、品质保障、配送及时、轻松购物！</title>
+    <title>Clinical Trials</title>
     <!-- web description -->
-    <meta name="description" content="为您提供愉快的网上购物体验！" />
+    <meta name="description" content="Search Clinical Trials Information in Our Website!" />
     
     <!-- keywords -->
-    <meta name="keywords" content="网上购物，网上商城" />
+    <meta name="keywords" content="Clinical Trials" />
 
-    <!-- favicon icon  -->
-    <link rel="icon" href="/favicon01.ico" />
     <!-- import base.css初始化样式文件 -->
     <link rel="stylesheet" href="css/base.css">
     <!-- import common.css公共样式 -->
@@ -227,11 +225,7 @@
             <span class="fs-4"> &#20 Clinical Trial</span>
           </a>
           <div class="d-flex align-items-center">
-            <form class="w-100 me-3" role="search">
-                <input type="search" class="form-control" placeholder="Search..." aria-label="Search" width="1000px" style="
-    width: 1000px;
-">
-            </form>
+            
           </div>
         </div>
       </header>
@@ -241,38 +235,58 @@
     <!-- shortcut module start -->
 <!-- Search Button -->
       <button type="submit" class="w-1300 btn btn-primary">Submit</button>
-				
-				<!-- Condition or Disease -->
-				<div class="w-1300 w3-row w3-padding-4">
-					<div class="condition mb-3">
-            <label for="exampleInputEmail1" class="form-label">Condition or disease</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-				</div>
+<!-- Condition or Disease -->
+<div class="w-1300 w3-row w3-padding-4">
+  <div class="condition mb-3">
+    <label for="exampleInputEmail1" class="form-label">Condition or disease</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+</div>
 
     <!-- General search terms (Other Terms) ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 		
-				<!-- Study Type  -->
-        <div class="w-1300 mb-3">
-          <label for="exampleSelect" class="form-label">Study Type</label>
-          <select class="form-select" id="exampleSelect">
-            <option value="">All Studies</option>
-							<option value="Intr">Interventional Studies (Clinical Trials)</option>
-							<option value="Obsr">Observational Studies</option>
-							<option value="PReg">-- Patient Registries</option>
-							<option value="Expn">Expanded Access Studies</option>
-          </select>
-        </div>
+  <!-- Container for Study Type and Study Result with space -->
+  <div class="w-1300 mb-3 d-flex justify-content-between">
+    <!-- Study Type -->
+    <div>
+      <label for="studyTypeSelect" class="form-label">Study Type</label>
+      <select class="form-select" id="studyTypeSelect">
+        <option value="">All Studies</option>
+        <option value="Intr">Interventional Studies (Clinical Trials)</option>
+        <option value="Obsr">Observational Studies</option>
+        <option value="PReg">-- Patient Registries</option>
+        <option value="Expn">Expanded Access Studies</option>
+      </select>
+    </div>
 
-        <!-- Study Result -->
-        <div class="w-1300 mb-3">
-          <label for="exampleSelect" class="form-label">Study Result</label>
-          <select class="form-select" id="exampleSelect">
-            <option value="">All Studies</option>
-							<option value="Intr">Interventional Studies (Clinical Trials)</option>
-							<option value="With"  >Studies With Results &nbsp;</option>
-						<option value="Without"  >Studies Without Results &nbsp;</option>
-          </select>
-        </div>
+    <!-- Add some space between Study Type and Study Result -->
+    <div class="mx-3"></div>
+
+    <!-- Study Result -->
+    <div>
+      <label for="studyResultSelect" class="form-label">Study Result</label>
+      <select class="form-select" id="studyResultSelect">
+        <option value="">All Studies</option>
+        <option value="With">Studies With Results</option>
+        <option value="Without">Studies Without Results</option>
+      </select>
+    </div>
+  </div>
+  <!-- Condition or Disease -->
+<div class="w-1300 w3-row w3-padding-4">
+  <div class="condition mb-3" style="display: flex;">
+    <label for="exampleInputEmail1" class="form-label">Age</label>
+    <input style= "width: 50px; margin-left: 10px;" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style="max-width: 800px;">
+    <select style= "width: 50px; margin-left: 10px;"class="form-select" id="studyResultSelect">
+      <option value="">Years</option>
+      <option value="Intr">Months</option>
+      <option value="With">Weeks</option>
+      <option value="Without">Days</option>
+    </select>
+  </div>
+</div>
+
+
 				
 
     <!-- Recruitment ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
