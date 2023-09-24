@@ -25,6 +25,8 @@
     <!-- import js file -->
     <script src="js/index.js"></script>
     <script src="assets/js/color-modes.js"></script>
+    <script src="JS/search-page.js"></script>
+
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -240,8 +242,8 @@
           
     <!-- shortcut module start -->
 <!-- Search Button -->
-      <button type="submit" class="w-1300 btn btn-primary">Submit</button>
-				
+      <button type="submit" class="w-1300 btn btn-primary" onclick="searchByContent()">Submit</button>
+      <div id="jsonData"></div>
 				<!-- Condition or Disease -->
 				<div class="w-1300 w3-row w3-padding-4">
 					<div class="condition mb-3">
@@ -255,7 +257,7 @@
         <div class="w-1300 mb-3">
           <label for="exampleSelect" class="form-label">Study Type</label>
           <select class="form-select" id="exampleSelect">
-            <option value="">All Studies</option>
+            <option value="all">All Studies</option>
 							<option value="Intr">Interventional Studies (Clinical Trials)</option>
 							<option value="Obsr">Observational Studies</option>
 							<option value="PReg">-- Patient Registries</option>
