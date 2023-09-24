@@ -1,13 +1,12 @@
 # Hackathon_2023
 MedQuest:
-MedQuest:
 
-##About us:
+## About Us:
 We are a passionate team of four Computer Science majors from Rice University, united by a profound empathy for individuals battling severe or hard-to-cure diseases. Witnessing the tremendous challenges faced by those in need of life-saving medical resources, we embarked on a mission driven by compassion and purpose. Stories from individuals in our community, who have navigated complex healthcare journeys with their loved ones, ignited a deep desire within us to make a difference.
 
 We understand the unique struggles and uncertainties that accompany severe illnesses. The constant search for hope, the Quest for answers to pressing medical questions, and the relentless pursuit of effective treatments all underscore the immense difficulties faced by individuals and their families. It is this understanding, this unwavering empathy, that fuels our commitment to building MedQuest, which aims to bridge the gap between those in need and the potential solutions that could change lives.
 
-##What It Does:
+## What it does:
 TO-DO: Install Openai, flask in Python.
 
 Our innovative platform, fueled by advanced technology and guided by empathy, offers a wide array of functionalities tailored to the needs of individuals confronting severe or hard-to-cure diseases:
@@ -18,7 +17,7 @@ Our innovative platform, fueled by advanced technology and guided by empathy, of
 
 3. Demystifying Medical Terminology: Navigating the complex world of medical terminology can be intimidating, especially for those dealing with life-altering illnesses. Our platform includes a dynamically updated glossary of medical terms, making essential knowledge more accessible and empowering users with a deeper understanding of their conditions and treatment options.
 
-##Impact and Future:
+## Impact and Future:
 - Our project is not just a technological innovation; it is a beacon of hope for individuals facing the most challenging of circumstances. By simplifying access to clinical trials and providing a trustworthy source of medical information, we aim to ease the burdens that weigh heavily on the shoulders of those dealing with severe diseases.
 
 - As we look ahead, we are committed to expanding our reach and impact. We envision partnerships with medical institutions, collaborations with healthcare professionals, and continuous advancements in AI technology. Our mission is to be a lifeline, a source of support, and a catalyst for change in the lives of those who need it most.
