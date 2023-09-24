@@ -1,4 +1,4 @@
-# MedQuest:
+### MedQuest:
 
 ## About Us:
 We are a passionate team of four Computer Science majors from Rice University, united by a profound empathy for individuals battling severe or hard-to-cure diseases. Witnessing the tremendous challenges faced by those in need of life-saving medical resources, we embarked on a mission driven by compassion and purpose. Stories from individuals in our community, who have navigated complex healthcare journeys with their loved ones, ignited a deep desire within us to make a difference.
