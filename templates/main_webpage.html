@@ -235,11 +235,13 @@
     <!-- chatbot module start -->
     <section class="py-5 text-center container">
         <div class="row py-lg-5">
-          <div class="col-lg-6 col-md-8 mx-auto">
+          <div class="col-lg-6 col-md-8 mx-auto condition mb-3">
             <h1 class="fw-light">Ask Your Health Concern</h1>
-            <input type="text" id="question" placeholder="Type your question here...">
-            <button onclick="getAnswer()">Ask</button>
-            <p id="answer">Answer:</p>
+              <!-- <label for="exampleInputEmail1" class="form-label">Condition or disease</label> -->
+              <input type="text" class="form-control" id="question" placeholder="Type your question here...">
+            <!-- <button onclick="getAnswer()">Ask</button> -->
+              <button style="margin-top: 10px;" onclick="getAnswer()" type="submit" class="w-1300 btn btn-primary">Ask</button>
+            <p id="answer" style="font-size: 20px; margin-top: 15px;">Answer:</p>
           </div>
         </div>
       </section>
