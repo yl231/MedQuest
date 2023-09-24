@@ -13,6 +13,8 @@
     <!-- Add Bootstrap JS and Popper.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="JS/search-page.js"></script>
+
 </head>
 
 <body>
@@ -37,49 +39,57 @@
     </div>
 
     <script>
-        $(document).ready(function () {
+        $(document).ready(async function () {
             // Fetch data from the remote JSON URL
-            $.getJSON('https://classic.clinicaltrials.gov/api/query/full_studies?expr=Coronavirus+COVID&max_rnk=100&fmt=json', function (data) {
-                const studies = data.FullStudiesResponse.FullStudies;
+            const urlParams = new URLSearchParams(window.location.search);
+            const condition = urlParams.get('expr');
+            const studyType = urlParams.get('studyType');
+            const max_rnk = 1000;
 
-                // Iterate through the studies data and add rows to the DataTable
-                $.each(studies, function (index, study) {
-                    const protocol = study.Study.ProtocolSection;
-                    const status = protocol.StatusModule;
-                    const studyId = protocol.IdentificationModule.NCTId; // Get the study ID
+            const req = `https://classic.clinicaltrials.gov/api/query/study_fields?expr=${condition}&min_rnk=1&max_rnk=${max_rnk}&fields=NCTId,Condition,BriefTitle,OverallStatus,LocationCountry,MaximumAge,MinimumAge,StudyType,StartDate,CompletionDate&fmt=json`;
+            const jsData = await fetchContentFromURL(req);
+            console.log("mid-check of jsData: ", jsData);
 
-                    // Determine the text color based on the status
-                    let textColorClass = '';
-                    if (status.OverallStatus === 'Completed' || status.OverallStatus === 'Recruiting' || status.OverallStatus === 'Active, not recruiting') {
-                        textColorClass = 'text-success'; // Green text for potential to work
-                    } else if (status.OverallStatus === 'Unknown status') {
-                        textColorClass = 'text-warning'; // Yellow text for unknown status
-                    } else {
-                        textColorClass = 'text-danger'; // Red text for other statuses
-                    }
+            const processed_data = processJsonData(jsData, studyType);
 
-                    // Create a clickable link for the study title
-                    const studyLink = '<a href="study-details.html?studyId=' + studyId + '">' + protocol.IdentificationModule.BriefTitle + '</a>';
+            // const studies = data.FullStudiesResponse.FullStudies;
 
-                    // Append row with the determined text color and clickable study title
-                    $('#studyTable tbody').append(
-                        '<tr>' +
-                        '<td>' + protocol.IdentificationModule.NCTId + '</td>' +
-                        '<td>' + studyLink + '</td>' +
-                        '<td>' + status.StartDateStruct.StartDate + '</td>' +
-                        '<td>' + status.CompletionDateStruct.CompletionDate + '</td>' +
-                        '<td class="' + textColorClass + '">' + status.OverallStatus + '</td>' +
-                        '</tr>'
-                    );
-                });
+            // Iterate through the studies data and add rows to the DataTable
+            $.each(processed_data, function (index, study) {
+                const studyId = study.NCTId[0];
+                const status = study.OverallStatus[0];
 
-                // Initialize DataTable
-                $('#studyTable').DataTable({
-                    "paging": true,
-                    "searching": true,
-                    "ordering": true,
-                    "responsive": true
-                });
+                // Determine the text color based on the status
+                let textColorClass = '';
+                if (status === 'Completed' || status === 'Recruiting' || status === 'Active, not recruiting') {
+                    textColorClass = 'text-success'; // Green text for potential to work
+                } else if (status === 'Unknown status') {
+                    textColorClass = 'text-warning'; // Yellow text for unknown status
+                } else {
+                    textColorClass = 'text-danger'; // Red text for other statuses
+                }
+
+                // Create a clickable link for the study title
+                const studyLink = '<a href="study-details.html?studyId=' + studyId + '">' + study.BriefTitle[0] + '</a>';
+
+                // Append row with the determined text color and clickable study title
+                $('#studyTable tbody').append(
+                    '<tr>' +
+                    '<td>' + studyId + '</td>' +
+                    '<td>' + studyLink + '</td>' +
+                    '<td>' + study.StartDate[0] + '</td>' +
+                    '<td>' + study.CompletionDate[0] + '</td>' +
+                    '<td class="' + textColorClass + '">' + status + '</td>' +
+                    '</tr>'
+                );
+            });
+
+            // Initialize DataTable
+            $('#studyTable').DataTable({
+                "paging": true,
+                "searching": true,
+                "ordering": true,
+                "responsive": true
             });
         });
     </script>

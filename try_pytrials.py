@@ -11,7 +11,7 @@ res = ct.get_study_fields(
 )
 
 # Pretty-print the dictionary
-formatted_json = json.dumps(res2, indent=4)
+formatted_json = json.dumps(res, indent=4)
 
 # Print the nicely formatted JSON
 print(formatted_json)

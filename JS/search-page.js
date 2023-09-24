@@ -1,23 +1,27 @@
 async function searchByContent(){
 
     const condition = document.getElementById("exampleInputEmail1").value;
-    const min_rnk = 1;
-    const max_studies = 100;
-    const format = "json"
+    const studyType = document.getElementById("studyTypeSelect").value;
+    console.log(condition, studyType)
 
-    const req = `https://classic.clinicaltrials.gov/api/query/study_fields?expr=${condition}&min_rnk=${min_rnk}&max_rnk=${max_studies + min_rnk - 1}&fields=NCTId,Condition,BriefTitle,OverallStatus,LocationCountry,MaximumAge,MinimumAge,StudyType&fmt=json`;
-    console.log("url link: ", req)
+    window.location.href = `search-result-page.html?expr=${condition}&studyType=${studyType}`; // Replace "nextpage.html" with the URL you want to navigate to
+
+    // const max_studies = 100;
+
+    // const req = `https://classic.clinicaltrials.gov/api/query/study_fields?expr=${condition}&min_rnk=1&max_rnk=${max_studies + min_rnk - 1}&fields=NCTId,Condition,BriefTitle,OverallStatus,LocationCountry,MaximumAge,MinimumAge,StudyType&fmt=json`;
+    // console.log("url link: ", req)
     // Display the JSON URL
     // document.getElementById('jsonData').textContent = req;
 
-    const jsData = await fetchContentFromURL(req);
-    console.log(jsData);
+    // const jsData = await fetchContentFromURL(req);
+    // console.log(jsData);
 
-    const processed_jsData = processJsonData(jsData);
-    console.log(processed_jsData);
+    // const processed_jsData = processJsonData(jsData);
+    // console.log(processed_jsData);
 
 
 }
+
 
 
 function parseAge(ageString, status_code) {
@@ -58,12 +62,14 @@ function compareAgeUnits(unitA, unitB) {
 }
   
 
-function processJsonData(jsonData) {
+function processJsonData(jsonData, input_study_type) {
     const inputAgeUnit = 'Years';
-    const inputAge = 5;
+    const inputAge = 18;
     // Ensure that the JSON data has the expected structure
   
     const studyFields = jsonData.StudyFieldsResponse.StudyFields;
+    console.log("mid-check of studyfields: ", studyFields);
+
     const statusList = [
         "Not yet recruiting",
         "Recruiting",
@@ -75,7 +81,7 @@ function processJsonData(jsonData) {
         "Withdrawn",
         "Unknown status"
       ];
-    const inputStatus = [0, 1, 0, 0, 0, 0, 1, 0, 0];
+    const inputStatus = [1, 1, 1, 1, 1, 1, 1, 1, 1];
     
     const filteredData = studyFields.filter((study) => {
         // Filter the data based on the age condition
@@ -116,9 +122,9 @@ function processJsonData(jsonData) {
 
         // filter by study type:
         let study_type_bool = false;
-        const input_study_type = document.getElementById("exampleSelect").value;
-        console.log("Input study type: ", input_study_type);
         const trial_study_type = study.StudyType[0];
+
+        // const trial_study_type = study.StudyType[0];
         const studyTypeMap = new Map([
             ['all', 'All Studies'],
             ['Intr', 'Interventional'],
@@ -131,10 +137,10 @@ function processJsonData(jsonData) {
         }
 
 
-
         const aggr_bool = age_filter && status_bool && study_type_bool;
         return aggr_bool;
     });
+    console.log("filtered data: ", filteredData);
     return filteredData;
 }
   
